@@ -77,8 +77,9 @@
     .created-by {
       margin-top: 30px;
       font-size: 0.8em;
-      opacity: 0.4;
+      opacity: 0.25; /* thoda subtle */
       font-style: italic;
+      color: #00aa00; /* dim green */
     }
 
     @media (max-width: 500px) {
@@ -117,7 +118,7 @@
     }
 
     function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Increased opacity for trailing effect
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = '#0F0';
