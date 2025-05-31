@@ -20,6 +20,7 @@
       top: 0;
       left: 0;
       z-index: 0;
+      display: block;
     }
 
     .box {
@@ -95,12 +96,4 @@
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    resizeCanvas();
-
     const letters = "01";
-    const fontSize = 14
