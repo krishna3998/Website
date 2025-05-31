@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hacker Terminal</title>
   <style>
     body {
@@ -96,4 +96,45 @@
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
 
+    const fontSize = 14;
     const letters = "01";
+    let columns;
+    let drops;
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = Math.floor(canvas.width / fontSize);
+      drops = new Array(columns).fill(1);
+    }
+
+    function draw() {
+      // Semi-transparent black background for fade effect
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0'; // green color
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // Reset drop if it goes beyond canvas height or randomly
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      init();
+    });
+
+    init();
+    setInterval(draw, 33);
+  </script>
+</body>
+</html>
