@@ -29,29 +29,27 @@
       animation: flicker 1.5s infinite alternate;
     }
 
-    .typewriter-container {
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    .typewriter {
+    .typewriter-text {
       display: inline-block;
       overflow: hidden;
-      border-right: 2px solid #00ff00;
       white-space: nowrap;
-      letter-spacing: 2px;
-      animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+      border-right: 2px solid #00ff00;
+      animation: typing 4s steps(25, end), blink 0.75s step-end infinite;
       font-size: 1.2em;
-      max-width: 100%;
     }
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 100% }
+      to { width: 20ch }
     }
 
     @keyframes blink {
       50% { border-color: transparent }
+    }
+
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.85; }
     }
 
     .tagline {
@@ -61,19 +59,17 @@
       font-style: italic;
     }
 
-    @keyframes flicker {
-      from { opacity: 1; }
-      to { opacity: 0.85; }
-    }
-
     @media (max-width: 400px) {
-      .typewriter {
+      .typewriter-text {
         font-size: 1em;
+        animation: typing 4s steps(20, end), blink 0.75s step-end infinite;
+        to { width: 18ch; }
       }
     }
   </style>
 </head>
 <body>
   <div class="box">
-    <div class="typewriter-container">
-      <h1 class="typewriter">This
+    <h1 class="typewriter-text">This website is testing</h1>
+    <p>Created by Krishna</p>
+    <p>
