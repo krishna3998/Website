@@ -49,4 +49,97 @@
       white-space: nowrap;
       border-right: 2px solid #00ff00;
       font-size: 1.5em;
-      animation: typing 4s steps(30, end), blink 0.75s
+      animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 28ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .line {
+      margin-top: 15px;
+      font-size: 1em;
+      opacity: 0.85;
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    .created-by {
+      margin-top: 30px;
+      font-size: 0.8em;
+      opacity: 0.4;
+      font-style: italic;
+    }
+
+    @media (max-width: 500px) {
+      .typewriter-text {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="box">
+    <div class="terminal">
+      <h1 class="typewriter-text">This website is testing</h1>
+      <div class="line">Krishna@root:~$ access granted</div>
+      <div class="tagline"># Welcome to the Cyber Terminal</div>
+      <div class="created-by">created by Krishna</div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const fontSize = 14;
+    const letters = "01";
+    let columns;
+    let drops;
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = Math.floor(canvas.width / fontSize);
+      drops = new Array(columns).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Increased opacity for trailing effect
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      init();
+    });
+
+    init();
+    setInterval(draw, 33);
+  </script>
+</body>
+</html>
