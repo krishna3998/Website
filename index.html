@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing Website</title>
+  <title>Access Terminal</title>
   <style>
     body {
       margin: 0;
@@ -19,13 +19,13 @@
 
     .box {
       border: 2px solid #00ff00;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
       width: 90%;
-      max-width: 400px;
-      background-color: rgba(0, 255, 0, 0.05);
+      max-width: 420px;
+      background-color: rgba(0, 255, 0, 0.03);
       border-radius: 10px;
-      box-shadow: 0 0 30px #00ff00, 0 0 60px #00ff00;
+      box-shadow: 0 0 25px #00ff00, 0 0 50px #00ff00;
       animation: flicker 1.5s infinite alternate;
     }
 
@@ -34,13 +34,13 @@
       overflow: hidden;
       white-space: nowrap;
       border-right: 2px solid #00ff00;
-      animation: typing 4s steps(25, end), blink 0.75s step-end infinite;
+      animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
       font-size: 1.2em;
     }
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 20ch }
+      to { width: 28ch }
     }
 
     @keyframes blink {
@@ -62,14 +62,18 @@
     @media (max-width: 400px) {
       .typewriter-text {
         font-size: 1em;
-        animation: typing 4s steps(20, end), blink 0.75s step-end infinite;
-        to { width: 18ch; }
+        animation: typing 4s steps(25, end), blink 0.75s step-end infinite;
+        to { width: 25ch; }
       }
     }
   </style>
 </head>
 <body>
   <div class="box">
-    <h1 class="typewriter-text">This website is testing</h1>
-    <p>Created by Krishna</p>
-    <p>
+    <h1 class="typewriter-text">Initializing secure terminal...</h1>
+    <p>Krishna@root:~$ access granted</p>
+    <p>DarkNet Node Active | Tracking disabled</p>
+    <div class="tagline"># Underground Interface Loaded</div>
+  </div>
+</body>
+</html>
