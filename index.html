@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing Website</title>
+  <meta charset="UTF-8">
+  <title>Testing Site</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      background-color: #000;
+      background-color: black;
       color: #00ff00;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .box {
-      border: 2px solid #00ff00;
-      padding: 30px;
+      font-family: monospace;
       text-align: center;
-      width: 90%;
-      max-width: 400px;
-      background-color: rgba(0, 255, 0, 0.05);
-      border-radius: 10px;
-      box-shadow: 0 0 20px #00ff00;
+      padding: 50px;
     }
-
+    .photo-box {
+      border: 2px solid #00ff00;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #00ff00;
+      margin-bottom: 20px;
+    }
     h1, p {
       margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>This website is testing</h1>
+  <div class="photo-box">
+    <!-- Photo (You can replace with your own image URL or image file path) -->
+    <img src="https://via.placeholder.com/300x200.png?text=Your+Image" alt="My Photo">
+
+    <!-- Text below the photo -->
+    <h1>This is a test website</h1>
     <p>Created by Krishna</p>
+    <p>Welcome to the dark web look 😎</p>
   </div>
 </body>
 </html>
